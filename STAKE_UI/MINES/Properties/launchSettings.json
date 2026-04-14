@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Miner_GUI": {
+      "commandName": "Project",
+      "hotReloadEnabled": false,
+      "nativeDebugging": false
+    }
+  }
+}

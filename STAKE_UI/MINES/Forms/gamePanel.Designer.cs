@@ -1,0 +1,301 @@
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
+namespace Bomber_GUI.Forms
+{
+    partial class gamePanel
+    {
+        /// <summary> 
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary> 
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Component Designer generated code
+
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            this.outputLog = new System.Windows.Forms.RichTextBox();
+            this.winStats = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.gameGroupBox = new System.Windows.Forms.GroupBox();
+            this.liveBitsBox = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.buttonS = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.buttonLog = new System.Windows.Forms.Button();
+            this.gameSquares = new Bomber_GUI.Forms.SatoshiGrid();
+            this.cmManualBet = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.betHistoryView = new System.Windows.Forms.ListView();
+            this.colNum = new System.Windows.Forms.ColumnHeader();
+            this.colTime = new System.Windows.Forms.ColumnHeader();
+            this.colAmount = new System.Windows.Forms.ColumnHeader();
+            this.colMultiplier = new System.Windows.Forms.ColumnHeader();
+            this.colProfit = new System.Windows.Forms.ColumnHeader();
+            this.colView = new System.Windows.Forms.ColumnHeader();
+            this.gameGroupBox.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // outputLog
+            // 
+            this.outputLog.Location = new System.Drawing.Point(122, 43);
+            this.outputLog.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.outputLog.Name = "outputLog";
+            this.outputLog.ReadOnly = true;
+            this.outputLog.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.outputLog.Size = new System.Drawing.Size(396, 107);
+            this.outputLog.TabIndex = 13;
+            this.outputLog.Text = "";
+            // 
+            // winStats
+            // 
+            this.winStats.AutoSize = true;
+            this.winStats.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.winStats.Location = new System.Drawing.Point(364, 20);
+            this.winStats.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.winStats.Name = "winStats";
+            this.winStats.Size = new System.Drawing.Size(144, 16);
+            this.winStats.TabIndex = 12;
+            this.winStats.Text = "0% | W: 0 | L: 0";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(306, 20);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 16);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Win %:";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(122, 157);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(397, 38);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Start";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // button2 — Remove this game panel
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button2.Location = new System.Drawing.Point(7, 157);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(108, 38);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "Remove";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // gameGroupBox
+            // 
+            this.gameGroupBox.Controls.Add(this.liveBitsBox);
+            this.gameGroupBox.Controls.Add(this.button4);
+            this.gameGroupBox.Controls.Add(this.winStats);
+            this.gameGroupBox.Controls.Add(this.buttonS);
+            this.gameGroupBox.Controls.Add(this.button3);
+            this.gameGroupBox.Controls.Add(this.buttonLog);
+            this.gameGroupBox.Controls.Add(this.label2);
+            this.gameGroupBox.Controls.Add(this.gameSquares);
+            this.gameGroupBox.Controls.Add(this.button1);
+            this.gameGroupBox.Controls.Add(this.button2);
+            this.gameGroupBox.Controls.Add(this.outputLog);
+            this.gameGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.gameGroupBox.Location = new System.Drawing.Point(8, 0);
+            this.gameGroupBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.gameGroupBox.Name = "gameGroupBox";
+            this.gameGroupBox.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.gameGroupBox.Size = new System.Drawing.Size(526, 198);
+            this.gameGroupBox.TabIndex = 16;
+            this.gameGroupBox.TabStop = false;
+            // 
+            // liveBitsBox
+            // 
+            this.liveBitsBox.Location = new System.Drawing.Point(7, 17);
+            this.liveBitsBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.liveBitsBox.Name = "liveBitsBox";
+            this.liveBitsBox.ReadOnly = true;
+            this.liveBitsBox.Size = new System.Drawing.Size(108, 23);
+            this.liveBitsBox.TabIndex = 18;
+            this.liveBitsBox.Text = "Bits | Disabled";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(7, 258);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(161, 38);
+            this.button4.TabIndex = 17;
+            this.button4.Text = "Pause";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // buttonS — opens settings for this panel
+            // 
+            this.buttonS.Location = new System.Drawing.Point(119, 17);
+            this.buttonS.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.buttonS.Name = "buttonS";
+            this.buttonS.Size = new System.Drawing.Size(65, 25);
+            this.buttonS.TabIndex = 21;
+            this.buttonS.Text = "Settings";
+            this.buttonS.UseVisualStyleBackColor = true;
+            this.buttonS.Click += new System.EventHandler(this.buttonS_Click);
+            // 
+            // buttonLog — toggles the output log / bet history panel
+            // 
+            this.buttonLog.Location = new System.Drawing.Point(185, 17);
+            this.buttonLog.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.buttonLog.Name = "buttonLog";
+            this.buttonLog.Size = new System.Drawing.Size(60, 25);
+            this.buttonLog.TabIndex = 20;
+            this.buttonLog.Text = "Bet Log";
+            this.buttonLog.UseVisualStyleBackColor = true;
+            this.buttonLog.Click += new System.EventHandler(this.buttonLog_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(246, 17);
+            this.button3.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(52, 25);
+            this.button3.TabIndex = 16;
+            this.button3.Text = "Reset";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
+            // gameSquares
+            // 
+            this.gameSquares.ContextMenuStrip = this.cmManualBet;
+            this.gameSquares.GridBorder = true;
+            this.gameSquares.Location = new System.Drawing.Point(7, 43);
+            this.gameSquares.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.gameSquares.Name = "gameSquares";
+            this.gameSquares.Size = new System.Drawing.Size(107, 107);
+            this.gameSquares.SquareBorder = true;
+            this.gameSquares.TabIndex = 15;
+            this.gameSquares.Text = "satoshiGrid1";
+            // 
+            // cmManualBet
+            // 
+            this.cmManualBet.Name = "cmManualBet";
+            this.cmManualBet.Size = new System.Drawing.Size(61, 4);
+            // 
+            // colNum
+            // 
+            this.colNum.Text = "#";
+            this.colNum.Width = 38;
+            // 
+            // colTime
+            // 
+            this.colTime.Text = "Time";
+            this.colTime.Width = 66;
+            // 
+            // colAmount
+            // 
+            this.colAmount.Text = "Amount";
+            this.colAmount.Width = 80;
+            // 
+            // colMultiplier
+            // 
+            this.colMultiplier.Text = "Multiplier";
+            this.colMultiplier.Width = 72;
+            // 
+            // colProfit
+            // 
+            this.colProfit.Text = "Profit";
+            this.colProfit.Width = 90;
+            // 
+            // colView (renamed header to "Bet ID"; cell text "View" is blue+underlined via owner-draw)
+            // 
+            this.colView.Text = "Bet ID";
+            this.colView.Width = 50;
+            // 
+            // betHistoryView
+            // 
+            this.betHistoryView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+                this.colNum,
+                this.colTime,
+                this.colAmount,
+                this.colMultiplier,
+                this.colProfit,
+                this.colView
+            });
+            this.betHistoryView.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.betHistoryView.FullRowSelect = true;
+            this.betHistoryView.GridLines = true;
+            this.betHistoryView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.betHistoryView.Location = new System.Drawing.Point(8, 198);
+            this.betHistoryView.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.betHistoryView.Name = "betHistoryView";
+            this.betHistoryView.OwnerDraw = true;
+            this.betHistoryView.Size = new System.Drawing.Size(522, 150);
+            this.betHistoryView.TabIndex = 19;
+            this.betHistoryView.UseCompatibleStateImageBehavior = false;
+            this.betHistoryView.View = System.Windows.Forms.View.Details;
+            this.betHistoryView.Visible = false;
+            this.betHistoryView.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.BetHistoryView_DrawColumnHeader);
+            this.betHistoryView.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.BetHistoryView_DrawItem);
+            this.betHistoryView.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.BetHistoryView_DrawSubItem);
+            // 
+            // gamePanel
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.gameGroupBox);
+            this.Controls.Add(this.betHistoryView);
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Name = "gamePanel";
+            this.Size = new System.Drawing.Size(538, 208);
+            this.gameGroupBox.ResumeLayout(false);
+            this.gameGroupBox.PerformLayout();
+            this.ResumeLayout(false);
+        }
+
+        #endregion
+        private System.Windows.Forms.RichTextBox outputLog;
+        private System.Windows.Forms.Label winStats;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox gameGroupBox;
+        private SatoshiGrid gameSquares;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button buttonS;
+        private System.Windows.Forms.Button buttonLog;
+        private System.Windows.Forms.TextBox liveBitsBox;
+        private System.Windows.Forms.ContextMenuStrip cmManualBet;
+        private System.Windows.Forms.ListView betHistoryView;
+        private System.Windows.Forms.ColumnHeader colNum;
+        private System.Windows.Forms.ColumnHeader colTime;
+        private System.Windows.Forms.ColumnHeader colAmount;
+        private System.Windows.Forms.ColumnHeader colMultiplier;
+        private System.Windows.Forms.ColumnHeader colProfit;
+        private System.Windows.Forms.ColumnHeader colView;
+    }
+}
