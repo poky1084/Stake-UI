@@ -836,7 +836,7 @@ namespace Hilo_v2
             StopWincheckBox2.Checked = Properties.Settings.Default.StopWincheckBox2;
             CashoutcheckBox2.Checked = Properties.Settings.Default.CashoutcheckBox2;
             checkBox1.Checked = Properties.Settings.Default.checkBox1;
-            cbAutoCard.Checked = Properties.Settings.Default.AutoCard;
+            //cbAutoCard.Checked = Properties.Settings.Default.AutoCard;
             PauseMulticheckBox.Checked = Properties.Settings.Default.PauseMulticheckBox;
             SeedcheckBox.Checked = Properties.Settings.Default.SeedcheckBox;
             StopAutoValue.Value = Properties.Settings.Default.StopAutoValue;
@@ -981,7 +981,7 @@ namespace Hilo_v2
         private void RestBaseLosestreakCheck_CheckedChanged(object sender, EventArgs e) { Properties.Settings.Default.RestBaseLosestreakCheck = RestBaseLosestreakCheck.Checked; }
         private void resetBaselossesOf_ValueChanged(object sender, EventArgs e) { Properties.Settings.Default.resetBaselossesOf = resetBaselossesOf.Value; }
         private void resetBaselosestreakOf_ValueChanged(object sender, EventArgs e) { Properties.Settings.Default.resetBaselosestreakOf = resetBaselosestreakOf.Value; }
-        private void cbAutoCard_CheckedChanged(object sender, EventArgs e) { rankBox2.Enabled = !cbAutoCard.Checked; suitBox2.Enabled = !cbAutoCard.Checked; Properties.Settings.Default.AutoCard = cbAutoCard.Checked; }
+        private void cbAutoCard_CheckedChanged(object sender, EventArgs e) {   }
         private void listView4_SelectedIndexChanged(object sender, EventArgs e) { }
         private void ResetBaseLossamountCheck_CheckedChanged(object sender, EventArgs e) { }
         private void resetBaseLossamountOf_ValueChanged(object sender, EventArgs e) { }

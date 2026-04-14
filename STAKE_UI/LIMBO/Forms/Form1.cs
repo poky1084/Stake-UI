@@ -187,17 +187,21 @@ namespace Limbo
             // These fire on the Fleck thread, so always Invoke back to the UI thread.
             BrowserFetch.Connected += (s, e) => this.Invoke((MethodInvoker)delegate ()
             {
-                lblCookieStatus.Text = "⬤ Extension ON";
-                lblCookieStatus.ForeColor = Color.Green;
-                lblCookieStatus.Visible = true;
-               
+
+                if (UseExtensionMode)
+                {
+                    lblCookieStatus.Text = "⬤ Extension ON";
+                    lblCookieStatus.ForeColor = Color.LimeGreen;
+                    lblCookieStatus.Visible = true;
+                }
+
             });
             BrowserFetch.Disconnected += (s, e) => this.Invoke((MethodInvoker)delegate ()
             {
                 if (UseExtensionMode)
                 {
                     lblCookieStatus.Text = "⬤ Extension OFF";
-                    lblCookieStatus.ForeColor = Color.Orange;
+                    lblCookieStatus.ForeColor = Color.Gray;
                     lblCookieStatus.Visible = true;
                 }
             });
@@ -230,7 +234,7 @@ namespace Limbo
             {
                 // Show OFF immediately; Connected event will flip it to ON once socket opens
                 lblCookieStatus.Text      = "⬤ Extension OFF";
-                lblCookieStatus.ForeColor = Color.Orange;
+                lblCookieStatus.ForeColor = Color.Gray;
                 lblCookieStatus.Visible   = true;
                 //BrowserFetch.StartServer();
 
@@ -238,7 +242,7 @@ namespace Limbo
                 if (BrowserFetch.IsConnected)
                 {
                     lblCookieStatus.Text      = "⬤ Extension ON";
-                    lblCookieStatus.ForeColor = Color.Green;
+                    lblCookieStatus.ForeColor = Color.LimeGreen;
                 }
             }
             else
@@ -247,7 +251,7 @@ namespace Limbo
                 //BrowserFetch.StopServer();
                 bool hasCookie = !string.IsNullOrEmpty(ClearanceCookie);
                 lblCookieStatus.Text      = hasCookie ? "⬤ Cookie OK" : "⬤ Cookie OFF";
-                lblCookieStatus.ForeColor = hasCookie ? Color.Green : Color.Orange;
+                lblCookieStatus.ForeColor = hasCookie ? Color.LimeGreen : Color.Gray;
                 lblCookieStatus.Visible   = true;
                
             }
@@ -298,7 +302,7 @@ namespace Limbo
                 // ── Cookie mode ────────────────────────────────────────────────
                 bool hasCookie = !string.IsNullOrEmpty(ClearanceCookie);
                 lblCookieStatus.Text = hasCookie ? "⬤ Cookie OK" : "⬤ Cookie OFF";
-                lblCookieStatus.ForeColor = hasCookie ? Color.Green : Color.Orange;
+                lblCookieStatus.ForeColor = hasCookie ? Color.LimeGreen : Color.Gray;
                 lblCookieStatus.Visible = true;  // extension status not relevant
                
             }
@@ -486,7 +490,7 @@ namespace Limbo
             };
             var log = new ListViewItem(row);
             listView1.Items.Insert(0, log);
-            if (listView1.Items.Count > 15)
+            if (listView1.Items.Count > 95)
                 listView1.Items[listView1.Items.Count - 1].Remove();
             log.BackColor = response.data.limboBet.payoutMultiplier > 0
                 ? Color.FromArgb(170, 250, 190)
@@ -890,7 +894,7 @@ namespace Limbo
 
         private async void CheckBtn_Click(object sender, EventArgs e)
         {
-            CheckBtn.Enabled = false;
+            //CheckBtn.Enabled = false;
             await CheckBalance();
             await Authorize();
             CheckBtn.Enabled = true;

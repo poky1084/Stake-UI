@@ -51,7 +51,6 @@ namespace Limbo
             this.label6 = new System.Windows.Forms.Label();
             this.profitLabel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.cmbFetchMode = new System.Windows.Forms.ComboBox();
             this.btnGetCookie = new System.Windows.Forms.Button();
             this.lblCookieStatus = new System.Windows.Forms.Label();
@@ -61,7 +60,6 @@ namespace Limbo
             this.label17 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.CheckBtn = new System.Windows.Forms.Button();
-            this.clearLinkbtn = new System.Windows.Forms.LinkLabel();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.currencyComboBox = new System.Windows.Forms.ComboBox();
@@ -75,6 +73,7 @@ namespace Limbo
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPageLua = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabConsole = new System.Windows.Forms.TabPage();
             this.CommandBox2 = new System.Windows.Forms.TextBox();
             this.CommandButton2 = new System.Windows.Forms.Button();
@@ -101,11 +100,10 @@ namespace Limbo
             this.label4 = new System.Windows.Forms.Label();
             this.ServerSeedBox = new System.Windows.Forms.TextBox();
             this.SimulateButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabConsole.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -118,11 +116,11 @@ namespace Limbo
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 418);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 545);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
             this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.statusStrip1.Size = new System.Drawing.Size(1045, 26);
+            this.statusStrip1.Size = new System.Drawing.Size(1197, 26);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -137,7 +135,6 @@ namespace Limbo
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(0, 2);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
@@ -383,39 +380,13 @@ namespace Limbo
             this.label7.TabIndex = 38;
             this.label7.Text = "Profit:";
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.cmbFetchMode);
-            this.tabPage2.Controls.Add(this.btnGetCookie);
-            this.tabPage2.Controls.Add(this.lblCookieStatus);
-            this.tabPage2.Controls.Add(this.textBox4);
-            this.tabPage2.Controls.Add(this.textBox3);
-            this.tabPage2.Controls.Add(this.label19);
-            this.tabPage2.Controls.Add(this.label17);
-            this.tabPage2.Controls.Add(this.textBox2);
-            this.tabPage2.Controls.Add(this.CheckBtn);
-            this.tabPage2.Controls.Add(this.clearLinkbtn);
-            this.tabPage2.Controls.Add(this.label14);
-            this.tabPage2.Controls.Add(this.label13);
-            this.tabPage2.Controls.Add(this.currencyComboBox);
-            this.tabPage2.Controls.Add(this.label12);
-            this.tabPage2.Controls.Add(this.textBox1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(504, 135);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Settings";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
             // cmbFetchMode
             // 
             this.cmbFetchMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFetchMode.Items.AddRange(new object[] {
             "Use Cookie",
             "Use Extension"});
-            this.cmbFetchMode.Location = new System.Drawing.Point(274, 6);
+            this.cmbFetchMode.Location = new System.Drawing.Point(107, 431);
             this.cmbFetchMode.Name = "cmbFetchMode";
             this.cmbFetchMode.Size = new System.Drawing.Size(122, 24);
             this.cmbFetchMode.TabIndex = 50;
@@ -423,7 +394,7 @@ namespace Limbo
             // 
             // btnGetCookie
             // 
-            this.btnGetCookie.Location = new System.Drawing.Point(403, 8);
+            this.btnGetCookie.Location = new System.Drawing.Point(235, 429);
             this.btnGetCookie.Name = "btnGetCookie";
             this.btnGetCookie.Size = new System.Drawing.Size(90, 27);
             this.btnGetCookie.TabIndex = 51;
@@ -433,14 +404,14 @@ namespace Limbo
             // 
             // lblCookieStatus
             // 
-            this.lblCookieStatus.Location = new System.Drawing.Point(384, 40);
+            this.lblCookieStatus.Location = new System.Drawing.Point(331, 433);
             this.lblCookieStatus.Name = "lblCookieStatus";
             this.lblCookieStatus.Size = new System.Drawing.Size(117, 20);
             this.lblCookieStatus.TabIndex = 52;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(294, 97);
+            this.textBox4.Location = new System.Drawing.Point(319, 98);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(145, 22);
             this.textBox4.TabIndex = 13;
@@ -449,7 +420,7 @@ namespace Limbo
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(97, 97);
+            this.textBox3.Location = new System.Drawing.Point(122, 98);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(136, 22);
             this.textBox3.TabIndex = 12;
@@ -459,7 +430,7 @@ namespace Limbo
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(243, 100);
+            this.label19.Location = new System.Drawing.Point(268, 101);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(45, 16);
             this.label19.TabIndex = 11;
@@ -469,7 +440,7 @@ namespace Limbo
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(9, 100);
+            this.label17.Location = new System.Drawing.Point(34, 101);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(53, 16);
             this.label17.TabIndex = 10;
@@ -478,7 +449,7 @@ namespace Limbo
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(97, 68);
+            this.textBox2.Location = new System.Drawing.Point(103, 488);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(136, 22);
             this.textBox2.TabIndex = 8;
@@ -487,7 +458,7 @@ namespace Limbo
             // 
             // CheckBtn
             // 
-            this.CheckBtn.Location = new System.Drawing.Point(294, 37);
+            this.CheckBtn.Location = new System.Drawing.Point(300, 457);
             this.CheckBtn.Margin = new System.Windows.Forms.Padding(4);
             this.CheckBtn.Name = "CheckBtn";
             this.CheckBtn.Size = new System.Drawing.Size(82, 26);
@@ -496,23 +467,10 @@ namespace Limbo
             this.CheckBtn.UseVisualStyleBackColor = true;
             this.CheckBtn.Click += new System.EventHandler(this.CheckBtn_Click);
             // 
-            // clearLinkbtn
-            // 
-            this.clearLinkbtn.AutoSize = true;
-            this.clearLinkbtn.LinkColor = System.Drawing.Color.Blue;
-            this.clearLinkbtn.Location = new System.Drawing.Point(457, 461);
-            this.clearLinkbtn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.clearLinkbtn.Name = "clearLinkbtn";
-            this.clearLinkbtn.Size = new System.Drawing.Size(39, 16);
-            this.clearLinkbtn.TabIndex = 6;
-            this.clearLinkbtn.TabStop = true;
-            this.clearLinkbtn.Text = "Clear";
-            this.clearLinkbtn.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.clearLinkbtn_LinkClicked);
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(8, 74);
+            this.label14.Location = new System.Drawing.Point(14, 494);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(33, 16);
@@ -522,7 +480,7 @@ namespace Limbo
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(8, 43);
+            this.label13.Location = new System.Drawing.Point(14, 463);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(63, 16);
@@ -533,7 +491,7 @@ namespace Limbo
             // 
             this.currencyComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.currencyComboBox.FormattingEnabled = true;
-            this.currencyComboBox.Location = new System.Drawing.Point(97, 39);
+            this.currencyComboBox.Location = new System.Drawing.Point(103, 459);
             this.currencyComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.currencyComboBox.Name = "currencyComboBox";
             this.currencyComboBox.Size = new System.Drawing.Size(192, 24);
@@ -543,7 +501,7 @@ namespace Limbo
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(9, 11);
+            this.label12.Location = new System.Drawing.Point(15, 518);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(55, 16);
@@ -553,10 +511,10 @@ namespace Limbo
             // textBox1
             // 
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(97, 10);
+            this.textBox1.Location = new System.Drawing.Point(103, 517);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(170, 22);
+            this.textBox1.Size = new System.Drawing.Size(404, 22);
             this.textBox1.TabIndex = 0;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -617,6 +575,10 @@ namespace Limbo
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.label19);
+            this.panel1.Controls.Add(this.label17);
             this.panel1.Location = new System.Drawing.Point(0, 290);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
@@ -634,7 +596,7 @@ namespace Limbo
             this.tabControl2.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(535, 411);
+            this.tabControl2.Size = new System.Drawing.Size(770, 552);
             this.tabControl2.TabIndex = 11;
             // 
             // tabPageLua
@@ -643,10 +605,21 @@ namespace Limbo
             this.tabPageLua.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageLua.Name = "tabPageLua";
             this.tabPageLua.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPageLua.Size = new System.Drawing.Size(527, 382);
+            this.tabPageLua.Size = new System.Drawing.Size(762, 523);
             this.tabPageLua.TabIndex = 0;
             this.tabPageLua.Text = "Lua";
             this.tabPageLua.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(393, 456);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 27);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Start";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tabConsole
             // 
@@ -657,14 +630,14 @@ namespace Limbo
             this.tabConsole.Margin = new System.Windows.Forms.Padding(4);
             this.tabConsole.Name = "tabConsole";
             this.tabConsole.Padding = new System.Windows.Forms.Padding(4);
-            this.tabConsole.Size = new System.Drawing.Size(527, 382);
+            this.tabConsole.Size = new System.Drawing.Size(762, 523);
             this.tabConsole.TabIndex = 1;
             this.tabConsole.Text = "Console";
             this.tabConsole.UseVisualStyleBackColor = true;
             // 
             // CommandBox2
             // 
-            this.CommandBox2.Location = new System.Drawing.Point(104, 350);
+            this.CommandBox2.Location = new System.Drawing.Point(101, 497);
             this.CommandBox2.Margin = new System.Windows.Forms.Padding(4);
             this.CommandBox2.Name = "CommandBox2";
             this.CommandBox2.Size = new System.Drawing.Size(313, 22);
@@ -672,7 +645,7 @@ namespace Limbo
             // 
             // CommandButton2
             // 
-            this.CommandButton2.Location = new System.Drawing.Point(4, 347);
+            this.CommandButton2.Location = new System.Drawing.Point(1, 494);
             this.CommandButton2.Margin = new System.Windows.Forms.Padding(4);
             this.CommandButton2.Name = "CommandButton2";
             this.CommandButton2.Size = new System.Drawing.Size(100, 28);
@@ -688,7 +661,7 @@ namespace Limbo
             this.richTextBox2.Location = new System.Drawing.Point(4, 4);
             this.richTextBox2.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(519, 343);
+            this.richTextBox2.Size = new System.Drawing.Size(754, 485);
             this.richTextBox2.TabIndex = 0;
             this.richTextBox2.Text = "";
             this.richTextBox2.TextChanged += new System.EventHandler(this.richTextBox2_TextChanged);
@@ -699,7 +672,7 @@ namespace Limbo
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(527, 382);
+            this.tabPage3.Size = new System.Drawing.Size(743, 523);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Log";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -720,7 +693,7 @@ namespace Limbo
             this.listView1.Location = new System.Drawing.Point(0, 0);
             this.listView1.Margin = new System.Windows.Forms.Padding(4);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(527, 382);
+            this.listView1.Size = new System.Drawing.Size(743, 523);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -755,7 +728,7 @@ namespace Limbo
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(527, 382);
+            this.tabPage4.Size = new System.Drawing.Size(762, 523);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Info";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -771,10 +744,10 @@ namespace Limbo
             "resetstats() -- reset statistics",
             "print(text) -- print text to console",
             "stop() --stop betting"});
-            this.listBox2.Location = new System.Drawing.Point(272, 0);
+            this.listBox2.Location = new System.Drawing.Point(261, 0);
             this.listBox2.Margin = new System.Windows.Forms.Padding(4);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(255, 382);
+            this.listBox2.Size = new System.Drawing.Size(501, 523);
             this.listBox2.TabIndex = 1;
             // 
             // listBox1
@@ -801,7 +774,7 @@ namespace Limbo
             this.listBox1.Location = new System.Drawing.Point(0, 0);
             this.listBox1.Margin = new System.Windows.Forms.Padding(4);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(259, 382);
+            this.listBox1.Size = new System.Drawing.Size(259, 523);
             this.listBox1.TabIndex = 0;
             // 
             // tabPage5
@@ -820,7 +793,7 @@ namespace Limbo
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(527, 382);
+            this.tabPage5.Size = new System.Drawing.Size(762, 523);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Seed";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -828,7 +801,7 @@ namespace Limbo
             // ResetBoxSeed
             // 
             this.ResetBoxSeed.AutoSize = true;
-            this.ResetBoxSeed.Location = new System.Drawing.Point(448, 135);
+            this.ResetBoxSeed.Location = new System.Drawing.Point(603, 19);
             this.ResetBoxSeed.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ResetBoxSeed.Name = "ResetBoxSeed";
             this.ResetBoxSeed.Size = new System.Drawing.Size(66, 16);
@@ -865,11 +838,11 @@ namespace Limbo
             this.listBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listBox3.FormattingEnabled = true;
             this.listBox3.ItemHeight = 16;
-            this.listBox3.Location = new System.Drawing.Point(0, 158);
+            this.listBox3.Location = new System.Drawing.Point(0, 139);
             this.listBox3.Margin = new System.Windows.Forms.Padding(4);
             this.listBox3.Name = "listBox3";
             this.listBox3.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listBox3.Size = new System.Drawing.Size(527, 224);
+            this.listBox3.Size = new System.Drawing.Size(762, 384);
             this.listBox3.TabIndex = 66;
             this.listBox3.SelectedIndexChanged += new System.EventHandler(this.listBox3_SelectedIndexChanged);
             // 
@@ -948,45 +921,41 @@ namespace Limbo
             this.SimulateButton.UseVisualStyleBackColor = true;
             this.SimulateButton.Click += new System.EventHandler(this.SimulateButton_Click_1);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(935, 378);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 27);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Start";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1045, 444);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.cmbFetchMode);
             this.Controls.Add(this.tabControl2);
+            this.Controls.Add(this.btnGetCookie);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lblCookieStatus);
             this.Controls.Add(this.LogButton);
             this.Controls.Add(this.TargetLabeL);
             this.Controls.Add(this.ResultLabeL);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.CheckBtn);
             this.Controls.Add(this.tabControl1);
-            //this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.currencyComboBox);
             this.Margin = new System.Windows.Forms.Padding(4);
-            //this.MaximizeBox = false;
             this.Name = "Form1";
-            //this.Text = "Limbo";
+            this.Size = new System.Drawing.Size(1197, 571);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.tabControl2.ResumeLayout(false);
             this.tabConsole.ResumeLayout(false);
             this.tabConsole.PerformLayout();
@@ -1006,7 +975,6 @@ namespace Limbo
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label ResultLabeL;
@@ -1047,7 +1015,6 @@ namespace Limbo
         private System.Windows.Forms.ComboBox currencyComboBox;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.LinkLabel clearLinkbtn;
         private System.Windows.Forms.Button CheckBtn;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox CommandBox2;

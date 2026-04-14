@@ -21,12 +21,6 @@ namespace STAKE_UI
             InitializeComponent();
             LoadGameTabs();
             Icon = Icon.ExtractAssociatedIcon(System.Reflection.Assembly.GetExecutingAssembly().Location);
-            this.Load += (s, e) => ResizeToCurrentTab(); // fires after everything is rendered
-            tabControl1.SelectedIndexChanged += (s, e) => ResizeToCurrentTab();
-        }
-        private void TabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ResizeToCurrentTab();
         }
         private void LoadGameTabs()
         {
@@ -58,38 +52,11 @@ namespace STAKE_UI
 
             minesControl.SizeChanged2 += (s, e) =>
             {
-                // Small delay to let the control finish resizing first
                 this.BeginInvoke(new Action(() =>
                 {
-                    tabPage4.Tag = minesControl.PreferredSize;  // update stored size
-                    ResizeToCurrentTab();
+                    tabPage4.Tag = minesControl.PreferredSize;
                 }));
             };
-
-            
-            ResizeToCurrentTab();
         }
-        private void ResizeToCurrentTab()
-        {
-            if (tabControl1.SelectedTab == null) return;
-            if (tabControl1.SelectedTab.Controls.Count == 0) return;
-
-            var control = tabControl1.SelectedTab.Controls[0];
-
-            // Use PreferredSize if available, fallback to stored Tag
-            Size gameSize = control.PreferredSize.IsEmpty
-                ? (Size)(tabControl1.SelectedTab.Tag ?? control.Size)
-                : control.PreferredSize;
-
-            this.ClientSize = new Size(
-                gameSize.Width,
-                gameSize.Height
-                    + tabControl1.ItemSize.Height
-                    + 4
-            );
-
-            this.CenterToScreen();
-        }
-
     }
 }

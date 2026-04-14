@@ -29,16 +29,16 @@ namespace Hilo_v2
         /// </summary>
         private void InitializeComponent()
         {
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.ManualPage = new System.Windows.Forms.TabPage();
+            this.label50 = new System.Windows.Forms.Label();
+            this.btnGetCookie = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.cbAutoCard = new System.Windows.Forms.CheckBox();
-            this.label25 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.ResetCounterLabel = new System.Windows.Forms.LinkLabel();
@@ -131,9 +131,13 @@ namespace Hilo_v2
             this.StopAutoValue = new System.Windows.Forms.NumericUpDown();
             this.StopWincheckBox2 = new System.Windows.Forms.CheckBox();
             this.CashoutcheckBox2 = new System.Windows.Forms.CheckBox();
+            this.lblWsStatus = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.lblWsIndicator = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.lblCookieStatus = new System.Windows.Forms.Label();
             this.CurrencyList = new System.Windows.Forms.ComboBox();
+            this.cmbFetchMode = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.BaseBetAmount = new System.Windows.Forms.NumericUpDown();
             this.button3 = new System.Windows.Forms.Button();
@@ -180,8 +184,6 @@ namespace Hilo_v2
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.mainWager = new System.Windows.Forms.Label();
             this.mainProfit = new System.Windows.Forms.Label();
             this.mainBalance = new System.Windows.Forms.Label();
@@ -190,14 +192,9 @@ namespace Hilo_v2
             this.label32 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.label50 = new System.Windows.Forms.Label();
-            this.cmbFetchMode = new System.Windows.Forms.ComboBox();
-            this.btnGetCookie = new System.Windows.Forms.Button();
-            this.lblCookieStatus = new System.Windows.Forms.Label();
-            this.lblWsIndicator = new System.Windows.Forms.Label();
-            this.lblWsStatus = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.ManualPage.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resetBaseWinamountOf)).BeginInit();
@@ -242,14 +239,13 @@ namespace Hilo_v2
             this.tabPage4.SuspendLayout();
             this.BetsPage.SuspendLayout();
             this.LogPage.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(643, 675);
+            this.button1.Location = new System.Drawing.Point(522, 286);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(119, 28);
@@ -261,10 +257,10 @@ namespace Hilo_v2
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox1.Location = new System.Drawing.Point(77, 675);
+            this.textBox1.Location = new System.Drawing.Point(72, 319);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(193, 24);
+            this.textBox1.Size = new System.Drawing.Size(569, 24);
             this.textBox1.TabIndex = 1;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -280,15 +276,16 @@ namespace Hilo_v2
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(763, 508);
+            this.tabControl1.Size = new System.Drawing.Size(1647, 408);
             this.tabControl1.TabIndex = 3;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // ManualPage
             // 
+            this.ManualPage.Controls.Add(this.label50);
+            this.ManualPage.Controls.Add(this.btnGetCookie);
             this.ManualPage.Controls.Add(this.textBox5);
-            this.ManualPage.Controls.Add(this.cbAutoCard);
-            this.ManualPage.Controls.Add(this.label25);
+            this.ManualPage.Controls.Add(this.panel1);
             this.ManualPage.Controls.Add(this.tabControl2);
             this.ManualPage.Controls.Add(this.suitBox2);
             this.ManualPage.Controls.Add(this.rankBox2);
@@ -298,11 +295,17 @@ namespace Hilo_v2
             this.ManualPage.Controls.Add(this.PauseMulti);
             this.ManualPage.Controls.Add(this.StopAutocheckBox2);
             this.ManualPage.Controls.Add(this.StopAutoValue);
+            this.ManualPage.Controls.Add(this.textBox1);
             this.ManualPage.Controls.Add(this.StopWincheckBox2);
+            this.ManualPage.Controls.Add(this.button1);
             this.ManualPage.Controls.Add(this.CashoutcheckBox2);
+            this.ManualPage.Controls.Add(this.lblWsStatus);
             this.ManualPage.Controls.Add(this.checkBox1);
+            this.ManualPage.Controls.Add(this.lblWsIndicator);
             this.ManualPage.Controls.Add(this.label7);
+            this.ManualPage.Controls.Add(this.lblCookieStatus);
             this.ManualPage.Controls.Add(this.CurrencyList);
+            this.ManualPage.Controls.Add(this.cmbFetchMode);
             this.ManualPage.Controls.Add(this.label6);
             this.ManualPage.Controls.Add(this.BaseBetAmount);
             this.ManualPage.Controls.Add(this.button3);
@@ -318,52 +321,70 @@ namespace Hilo_v2
             this.ManualPage.Location = new System.Drawing.Point(4, 29);
             this.ManualPage.Margin = new System.Windows.Forms.Padding(4);
             this.ManualPage.Name = "ManualPage";
-            this.ManualPage.Size = new System.Drawing.Size(755, 475);
+            this.ManualPage.Size = new System.Drawing.Size(1639, 375);
             this.ManualPage.TabIndex = 2;
             this.ManualPage.Text = "Manual/Auto";
             this.ManualPage.UseVisualStyleBackColor = true;
             // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label50.Location = new System.Drawing.Point(3, 320);
+            this.label50.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(61, 20);
+            this.label50.TabIndex = 24;
+            this.label50.Text = "apikey:";
+            // 
+            // btnGetCookie
+            // 
+            this.btnGetCookie.Location = new System.Drawing.Point(152, 288);
+            this.btnGetCookie.Name = "btnGetCookie";
+            this.btnGetCookie.Size = new System.Drawing.Size(119, 27);
+            this.btnGetCookie.TabIndex = 81;
+            this.btnGetCookie.Text = "Get Cookie";
+            this.btnGetCookie.UseVisualStyleBackColor = true;
+            this.btnGetCookie.Click += new System.EventHandler(this.btnGetCookie_Click);
+            // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(569, 235);
+            this.textBox5.Location = new System.Drawing.Point(10, 253);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(171, 26);
+            this.textBox5.Size = new System.Drawing.Size(133, 26);
             this.textBox5.TabIndex = 77;
             this.textBox5.Text = "stake.com";
             this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
-            // cbAutoCard
+            // panel1
             // 
-            this.cbAutoCard.AutoSize = true;
-            this.cbAutoCard.Location = new System.Drawing.Point(238, 64);
-            this.cbAutoCard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbAutoCard.Name = "cbAutoCard";
-            this.cbAutoCard.Size = new System.Drawing.Size(65, 24);
-            this.cbAutoCard.TabIndex = 76;
-            this.cbAutoCard.Text = "Auto";
-            this.cbAutoCard.UseVisualStyleBackColor = true;
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Location = new System.Drawing.Point(5, 347);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(637, 27);
+            this.panel1.TabIndex = 6;
             // 
-            // label25
+            // label3
             // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label25.Location = new System.Drawing.Point(448, 238);
-            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(113, 20);
-            this.label25.TabIndex = 50;
-            this.label25.Text = "Stake mirror";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(-2, 4);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 20);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Status:";
             // 
             // tabControl2
             // 
             this.tabControl2.Controls.Add(this.tabPage1);
             this.tabControl2.Controls.Add(this.tabPage2);
             this.tabControl2.Controls.Add(this.tabPage3);
-            this.tabControl2.Location = new System.Drawing.Point(5, 238);
+            this.tabControl2.Location = new System.Drawing.Point(649, 4);
             this.tabControl2.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(743, 233);
+            this.tabControl2.Size = new System.Drawing.Size(844, 376);
             this.tabControl2.TabIndex = 75;
             // 
             // tabPage1
@@ -408,7 +429,7 @@ namespace Hilo_v2
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(735, 200);
+            this.tabPage1.Size = new System.Drawing.Size(836, 343);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Increments";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -416,7 +437,7 @@ namespace Hilo_v2
             // ResetCounterLabel
             // 
             this.ResetCounterLabel.AutoSize = true;
-            this.ResetCounterLabel.Location = new System.Drawing.Point(569, 36);
+            this.ResetCounterLabel.Location = new System.Drawing.Point(331, 315);
             this.ResetCounterLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ResetCounterLabel.Name = "ResetCounterLabel";
             this.ResetCounterLabel.Size = new System.Drawing.Size(126, 20);
@@ -674,7 +695,7 @@ namespace Hilo_v2
             // resetValueIncrement
             // 
             this.resetValueIncrement.AutoSize = true;
-            this.resetValueIncrement.Location = new System.Drawing.Point(571, 9);
+            this.resetValueIncrement.Location = new System.Drawing.Point(214, 315);
             this.resetValueIncrement.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.resetValueIncrement.Name = "resetValueIncrement";
             this.resetValueIncrement.Size = new System.Drawing.Size(109, 20);
@@ -962,7 +983,7 @@ namespace Hilo_v2
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(735, 200);
+            this.tabPage2.Size = new System.Drawing.Size(836, 343);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Stops";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -970,7 +991,7 @@ namespace Hilo_v2
             // ResetCountersLabel2
             // 
             this.ResetCountersLabel2.AutoSize = true;
-            this.ResetCountersLabel2.Location = new System.Drawing.Point(556, 38);
+            this.ResetCountersLabel2.Location = new System.Drawing.Point(135, 290);
             this.ResetCountersLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ResetCountersLabel2.Name = "ResetCountersLabel2";
             this.ResetCountersLabel2.Size = new System.Drawing.Size(126, 20);
@@ -1078,7 +1099,7 @@ namespace Hilo_v2
             // resetValueStops
             // 
             this.resetValueStops.AutoSize = true;
-            this.resetValueStops.Location = new System.Drawing.Point(556, 11);
+            this.resetValueStops.Location = new System.Drawing.Point(8, 290);
             this.resetValueStops.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.resetValueStops.Name = "resetValueStops";
             this.resetValueStops.Size = new System.Drawing.Size(109, 20);
@@ -1292,7 +1313,7 @@ namespace Hilo_v2
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(735, 200);
+            this.tabPage3.Size = new System.Drawing.Size(836, 343);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Seeds / Delay";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1301,7 +1322,7 @@ namespace Hilo_v2
             // 
             this.groupBox2.Controls.Add(this.playSoundpatternCheck);
             this.groupBox2.Controls.Add(this.playSoundwinCheck);
-            this.groupBox2.Location = new System.Drawing.Point(4, 80);
+            this.groupBox2.Location = new System.Drawing.Point(4, 239);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
@@ -1338,16 +1359,16 @@ namespace Hilo_v2
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(437, 10);
+            this.label41.Location = new System.Drawing.Point(277, 41);
             this.label41.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(223, 20);
+            this.label41.Size = new System.Drawing.Size(182, 20);
             this.label41.TabIndex = 55;
-            this.label41.Text = "Empty value = Random seed";
+            this.label41.Text = "Empty value = Random";
             // 
             // SeedBox3
             // 
-            this.SeedBox3.Location = new System.Drawing.Point(264, 7);
+            this.SeedBox3.Location = new System.Drawing.Point(109, 36);
             this.SeedBox3.Margin = new System.Windows.Forms.Padding(4);
             this.SeedBox3.Name = "SeedBox3";
             this.SeedBox3.Size = new System.Drawing.Size(160, 26);
@@ -1357,7 +1378,7 @@ namespace Hilo_v2
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(167, 12);
+            this.label26.Location = new System.Drawing.Point(12, 41);
             this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(95, 20);
@@ -1379,16 +1400,16 @@ namespace Hilo_v2
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(428, 48);
+            this.label21.Location = new System.Drawing.Point(9, 126);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(60, 20);
+            this.label21.Size = new System.Drawing.Size(51, 20);
             this.label21.TabIndex = 43;
-            this.label21.Text = "| Every";
+            this.label21.Text = "Every";
             // 
             // SeedxWin
             // 
-            this.SeedxWin.Location = new System.Drawing.Point(501, 46);
+            this.SeedxWin.Location = new System.Drawing.Point(68, 127);
             this.SeedxWin.Margin = new System.Windows.Forms.Padding(4);
             this.SeedxWin.Maximum = new decimal(new int[] {
             10000000,
@@ -1396,14 +1417,14 @@ namespace Hilo_v2
             0,
             0});
             this.SeedxWin.Name = "SeedxWin";
-            this.SeedxWin.Size = new System.Drawing.Size(59, 26);
+            this.SeedxWin.Size = new System.Drawing.Size(73, 26);
             this.SeedxWin.TabIndex = 44;
             this.SeedxWin.ValueChanged += new System.EventHandler(this.SeedxWin_ValueChanged);
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(344, 48);
+            this.label16.Location = new System.Drawing.Point(143, 101);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(40, 20);
@@ -1413,7 +1434,7 @@ namespace Hilo_v2
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(565, 48);
+            this.label22.Location = new System.Drawing.Point(143, 129);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(43, 20);
@@ -1422,7 +1443,7 @@ namespace Hilo_v2
             // 
             // SeedxLose
             // 
-            this.SeedxLose.Location = new System.Drawing.Point(279, 46);
+            this.SeedxLose.Location = new System.Drawing.Point(68, 99);
             this.SeedxLose.Margin = new System.Windows.Forms.Padding(4);
             this.SeedxLose.Maximum = new decimal(new int[] {
             10000000,
@@ -1430,24 +1451,24 @@ namespace Hilo_v2
             0,
             0});
             this.SeedxLose.Name = "SeedxLose";
-            this.SeedxLose.Size = new System.Drawing.Size(64, 26);
+            this.SeedxLose.Size = new System.Drawing.Size(74, 26);
             this.SeedxLose.TabIndex = 41;
             this.SeedxLose.ValueChanged += new System.EventHandler(this.SeedxLose_ValueChanged);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(217, 48);
+            this.label15.Location = new System.Drawing.Point(9, 98);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(60, 20);
+            this.label15.Size = new System.Drawing.Size(51, 20);
             this.label15.TabIndex = 40;
-            this.label15.Text = "| Every";
+            this.label15.Text = "Every";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(148, 48);
+            this.label14.Location = new System.Drawing.Point(141, 73);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(41, 20);
@@ -1461,7 +1482,7 @@ namespace Hilo_v2
             0,
             0,
             0});
-            this.Seedxbets.Location = new System.Drawing.Point(75, 46);
+            this.Seedxbets.Location = new System.Drawing.Point(68, 71);
             this.Seedxbets.Margin = new System.Windows.Forms.Padding(4);
             this.Seedxbets.Maximum = new decimal(new int[] {
             100000000,
@@ -1481,7 +1502,7 @@ namespace Hilo_v2
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(9, 48);
+            this.label8.Location = new System.Drawing.Point(9, 73);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(51, 20);
@@ -1491,7 +1512,7 @@ namespace Hilo_v2
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 162);
+            this.label5.Location = new System.Drawing.Point(12, 193);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(119, 20);
@@ -1503,7 +1524,7 @@ namespace Hilo_v2
             this.groupBox1.Controls.Add(this.DelayBet);
             this.groupBox1.Controls.Add(this.DelayGuess);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Location = new System.Drawing.Point(4, 135);
+            this.groupBox1.Location = new System.Drawing.Point(4, 165);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -1624,7 +1645,7 @@ namespace Hilo_v2
             // PauseMulticheckBox
             // 
             this.PauseMulticheckBox.AutoSize = true;
-            this.PauseMulticheckBox.Location = new System.Drawing.Point(396, 204);
+            this.PauseMulticheckBox.Location = new System.Drawing.Point(297, 211);
             this.PauseMulticheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.PauseMulticheckBox.Name = "PauseMulticheckBox";
             this.PauseMulticheckBox.Size = new System.Drawing.Size(174, 24);
@@ -1636,7 +1657,7 @@ namespace Hilo_v2
             // PauseMulti
             // 
             this.PauseMulti.DecimalPlaces = 2;
-            this.PauseMulti.Location = new System.Drawing.Point(610, 203);
+            this.PauseMulti.Location = new System.Drawing.Point(511, 210);
             this.PauseMulti.Margin = new System.Windows.Forms.Padding(4);
             this.PauseMulti.Maximum = new decimal(new int[] {
             1000000000,
@@ -1662,7 +1683,7 @@ namespace Hilo_v2
             // StopAutocheckBox2
             // 
             this.StopAutocheckBox2.AutoSize = true;
-            this.StopAutocheckBox2.Location = new System.Drawing.Point(396, 151);
+            this.StopAutocheckBox2.Location = new System.Drawing.Point(297, 158);
             this.StopAutocheckBox2.Margin = new System.Windows.Forms.Padding(4);
             this.StopAutocheckBox2.Name = "StopAutocheckBox2";
             this.StopAutocheckBox2.Size = new System.Drawing.Size(200, 24);
@@ -1674,7 +1695,7 @@ namespace Hilo_v2
             // StopAutoValue
             // 
             this.StopAutoValue.DecimalPlaces = 2;
-            this.StopAutoValue.Location = new System.Drawing.Point(610, 149);
+            this.StopAutoValue.Location = new System.Drawing.Point(511, 156);
             this.StopAutoValue.Margin = new System.Windows.Forms.Padding(4);
             this.StopAutoValue.Maximum = new decimal(new int[] {
             100000000,
@@ -1700,7 +1721,7 @@ namespace Hilo_v2
             // StopWincheckBox2
             // 
             this.StopWincheckBox2.AutoSize = true;
-            this.StopWincheckBox2.Location = new System.Drawing.Point(377, 89);
+            this.StopWincheckBox2.Location = new System.Drawing.Point(278, 96);
             this.StopWincheckBox2.Margin = new System.Windows.Forms.Padding(4);
             this.StopWincheckBox2.Name = "StopWincheckBox2";
             this.StopWincheckBox2.Size = new System.Drawing.Size(118, 24);
@@ -1712,7 +1733,7 @@ namespace Hilo_v2
             // CashoutcheckBox2
             // 
             this.CashoutcheckBox2.AutoSize = true;
-            this.CashoutcheckBox2.Location = new System.Drawing.Point(396, 178);
+            this.CashoutcheckBox2.Location = new System.Drawing.Point(297, 185);
             this.CashoutcheckBox2.Margin = new System.Windows.Forms.Padding(4);
             this.CashoutcheckBox2.Name = "CashoutcheckBox2";
             this.CashoutcheckBox2.Size = new System.Drawing.Size(189, 24);
@@ -1721,10 +1742,21 @@ namespace Hilo_v2
             this.CashoutcheckBox2.UseVisualStyleBackColor = true;
             this.CashoutcheckBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
+            // lblWsStatus
+            // 
+            this.lblWsStatus.AutoSize = true;
+            this.lblWsStatus.ForeColor = System.Drawing.Color.Gray;
+            this.lblWsStatus.Location = new System.Drawing.Point(169, 291);
+            this.lblWsStatus.Name = "lblWsStatus";
+            this.lblWsStatus.Size = new System.Drawing.Size(117, 20);
+            this.lblWsStatus.TabIndex = 83;
+            this.lblWsStatus.Text = "Not connected";
+            this.lblWsStatus.Visible = false;
+            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(377, 64);
+            this.checkBox1.Location = new System.Drawing.Point(278, 71);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(160, 24);
@@ -1733,20 +1765,41 @@ namespace Hilo_v2
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // lblWsIndicator
+            // 
+            this.lblWsIndicator.AutoSize = true;
+            this.lblWsIndicator.ForeColor = System.Drawing.Color.Gray;
+            this.lblWsIndicator.Location = new System.Drawing.Point(148, 290);
+            this.lblWsIndicator.Name = "lblWsIndicator";
+            this.lblWsIndicator.Size = new System.Drawing.Size(21, 20);
+            this.lblWsIndicator.TabIndex = 82;
+            this.lblWsIndicator.Text = "⬤";
+            this.lblWsIndicator.Visible = false;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(334, 123);
+            this.label7.Location = new System.Drawing.Point(235, 130);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 20);
             this.label7.TabIndex = 28;
             this.label7.Text = "Currency";
             // 
+            // lblCookieStatus
+            // 
+            this.lblCookieStatus.AutoSize = true;
+            this.lblCookieStatus.ForeColor = System.Drawing.Color.Gray;
+            this.lblCookieStatus.Location = new System.Drawing.Point(277, 291);
+            this.lblCookieStatus.Name = "lblCookieStatus";
+            this.lblCookieStatus.Size = new System.Drawing.Size(102, 20);
+            this.lblCookieStatus.TabIndex = 84;
+            this.lblCookieStatus.Text = "◯ Not found";
+            // 
             // CurrencyList
             // 
             this.CurrencyList.FormattingEnabled = true;
-            this.CurrencyList.Location = new System.Drawing.Point(416, 119);
+            this.CurrencyList.Location = new System.Drawing.Point(317, 126);
             this.CurrencyList.Margin = new System.Windows.Forms.Padding(4);
             this.CurrencyList.Name = "CurrencyList";
             this.CurrencyList.Size = new System.Drawing.Size(64, 28);
@@ -1754,10 +1807,22 @@ namespace Hilo_v2
             this.CurrencyList.Text = "btc";
             this.CurrencyList.SelectedIndexChanged += new System.EventHandler(this.CurrencyList_SelectedIndexChanged);
             // 
+            // cmbFetchMode
+            // 
+            this.cmbFetchMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFetchMode.Items.AddRange(new object[] {
+            "Use Cookie",
+            "Use Extension"});
+            this.cmbFetchMode.Location = new System.Drawing.Point(10, 285);
+            this.cmbFetchMode.Name = "cmbFetchMode";
+            this.cmbFetchMode.Size = new System.Drawing.Size(136, 28);
+            this.cmbFetchMode.TabIndex = 50;
+            this.cmbFetchMode.SelectedIndexChanged += new System.EventHandler(this.cmbFetchMode_SelectedIndexChanged);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(483, 123);
+            this.label6.Location = new System.Drawing.Point(384, 130);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(71, 20);
@@ -1772,7 +1837,7 @@ namespace Hilo_v2
             0,
             0,
             458752});
-            this.BaseBetAmount.Location = new System.Drawing.Point(569, 121);
+            this.BaseBetAmount.Location = new System.Drawing.Point(470, 128);
             this.BaseBetAmount.Margin = new System.Windows.Forms.Padding(4);
             this.BaseBetAmount.Maximum = new decimal(new int[] {
             1000000000,
@@ -1787,7 +1852,7 @@ namespace Hilo_v2
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(632, 60);
+            this.button3.Location = new System.Drawing.Point(533, 67);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(110, 27);
@@ -1799,7 +1864,7 @@ namespace Hilo_v2
             // AutoCashout
             // 
             this.AutoCashout.DecimalPlaces = 2;
-            this.AutoCashout.Location = new System.Drawing.Point(610, 176);
+            this.AutoCashout.Location = new System.Drawing.Point(511, 183);
             this.AutoCashout.Margin = new System.Windows.Forms.Padding(4);
             this.AutoCashout.Maximum = new decimal(new int[] {
             10000000,
@@ -1824,7 +1889,7 @@ namespace Hilo_v2
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(632, 89);
+            this.button2.Location = new System.Drawing.Point(533, 96);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(110, 30);
@@ -1864,7 +1929,7 @@ namespace Hilo_v2
             this.patternBox.Location = new System.Drawing.Point(350, 32);
             this.patternBox.Margin = new System.Windows.Forms.Padding(4);
             this.patternBox.Name = "patternBox";
-            this.patternBox.Size = new System.Drawing.Size(390, 26);
+            this.patternBox.Size = new System.Drawing.Size(264, 26);
             this.patternBox.TabIndex = 4;
             this.patternBox.Text = "5,5,5";
             this.patternBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1932,7 +1997,7 @@ namespace Hilo_v2
             this.tabPage4.Location = new System.Drawing.Point(4, 29);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(755, 475);
+            this.tabPage4.Size = new System.Drawing.Size(1639, 375);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "FAQ";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1977,7 +2042,7 @@ namespace Hilo_v2
             this.BetsPage.Margin = new System.Windows.Forms.Padding(4);
             this.BetsPage.Name = "BetsPage";
             this.BetsPage.Padding = new System.Windows.Forms.Padding(4);
-            this.BetsPage.Size = new System.Drawing.Size(755, 475);
+            this.BetsPage.Size = new System.Drawing.Size(1639, 375);
             this.BetsPage.TabIndex = 0;
             this.BetsPage.Text = "Bets";
             this.BetsPage.UseVisualStyleBackColor = true;
@@ -2189,7 +2254,7 @@ namespace Hilo_v2
             this.listView4.Location = new System.Drawing.Point(4, 82);
             this.listView4.Margin = new System.Windows.Forms.Padding(4);
             this.listView4.Name = "listView4";
-            this.listView4.Size = new System.Drawing.Size(738, 374);
+            this.listView4.Size = new System.Drawing.Size(738, 285);
             this.listView4.TabIndex = 0;
             this.listView4.UseCompatibleStateImageBehavior = false;
             this.listView4.View = System.Windows.Forms.View.Details;
@@ -2228,7 +2293,7 @@ namespace Hilo_v2
             this.LogPage.Location = new System.Drawing.Point(4, 29);
             this.LogPage.Margin = new System.Windows.Forms.Padding(4);
             this.LogPage.Name = "LogPage";
-            this.LogPage.Size = new System.Drawing.Size(755, 475);
+            this.LogPage.Size = new System.Drawing.Size(1639, 375);
             this.LogPage.TabIndex = 4;
             this.LogPage.Text = "Log";
             this.LogPage.UseVisualStyleBackColor = true;
@@ -2242,7 +2307,7 @@ namespace Hilo_v2
             this.LogView2.Location = new System.Drawing.Point(0, 4);
             this.LogView2.Margin = new System.Windows.Forms.Padding(4);
             this.LogView2.Name = "LogView2";
-            this.LogView2.Size = new System.Drawing.Size(747, 454);
+            this.LogView2.Size = new System.Drawing.Size(747, 367);
             this.LogView2.TabIndex = 0;
             this.LogView2.UseCompatibleStateImageBehavior = false;
             this.LogView2.View = System.Windows.Forms.View.Details;
@@ -2279,26 +2344,6 @@ namespace Hilo_v2
             this.label2.Size = new System.Drawing.Size(69, 32);
             this.label2.TabIndex = 5;
             this.label2.Text = "0.00x";
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(-4, 706);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(773, 27);
-            this.panel1.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(5, 4);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 16);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Status:";
             // 
             // mainWager
             // 
@@ -2376,7 +2421,7 @@ namespace Hilo_v2
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(765, 123);
+            this.panel2.Size = new System.Drawing.Size(1678, 123);
             this.panel2.TabIndex = 21;
             // 
             // listView1
@@ -2397,82 +2442,13 @@ namespace Hilo_v2
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label50.Location = new System.Drawing.Point(8, 676);
-            this.label50.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(61, 20);
-            this.label50.TabIndex = 24;
-            this.label50.Text = "apikey:";
-            // 
-            // cmbFetchMode
-            // 
-            this.cmbFetchMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbFetchMode.Items.AddRange(new object[] {
-            "Use Cookie",
-            "Use Extension"});
-            this.cmbFetchMode.Location = new System.Drawing.Point(274, 675);
-            this.cmbFetchMode.Name = "cmbFetchMode";
-            this.cmbFetchMode.Size = new System.Drawing.Size(136, 24);
-            this.cmbFetchMode.TabIndex = 50;
-            this.cmbFetchMode.SelectedIndexChanged += new System.EventHandler(this.cmbFetchMode_SelectedIndexChanged);
-            // 
-            // btnGetCookie
-            // 
-            this.btnGetCookie.Location = new System.Drawing.Point(414, 673);
-            this.btnGetCookie.Name = "btnGetCookie";
-            this.btnGetCookie.Size = new System.Drawing.Size(95, 27);
-            this.btnGetCookie.TabIndex = 81;
-            this.btnGetCookie.Text = "Get Cookie";
-            this.btnGetCookie.UseVisualStyleBackColor = true;
-            this.btnGetCookie.Click += new System.EventHandler(this.btnGetCookie_Click);
-            // 
-            // lblCookieStatus
-            // 
-            this.lblCookieStatus.AutoSize = true;
-            this.lblCookieStatus.ForeColor = System.Drawing.Color.Gray;
-            this.lblCookieStatus.Location = new System.Drawing.Point(515, 680);
-            this.lblCookieStatus.Name = "lblCookieStatus";
-            this.lblCookieStatus.Size = new System.Drawing.Size(77, 16);
-            this.lblCookieStatus.TabIndex = 84;
-            this.lblCookieStatus.Text = "◯ Not found";
-            // 
-            // lblWsIndicator
-            // 
-            this.lblWsIndicator.AutoSize = true;
-            this.lblWsIndicator.ForeColor = System.Drawing.Color.Gray;
-            this.lblWsIndicator.Location = new System.Drawing.Point(411, 679);
-            this.lblWsIndicator.Name = "lblWsIndicator";
-            this.lblWsIndicator.Size = new System.Drawing.Size(15, 16);
-            this.lblWsIndicator.TabIndex = 82;
-            this.lblWsIndicator.Text = "⬤";
-            this.lblWsIndicator.Visible = false;
-            // 
-            // lblWsStatus
-            // 
-            this.lblWsStatus.AutoSize = true;
-            this.lblWsStatus.ForeColor = System.Drawing.Color.Gray;
-            this.lblWsStatus.Location = new System.Drawing.Point(432, 680);
-            this.lblWsStatus.Name = "lblWsStatus";
-            this.lblWsStatus.Size = new System.Drawing.Size(94, 16);
-            this.lblWsStatus.TabIndex = 83;
-            this.lblWsStatus.Text = "Not connected";
-            this.lblWsStatus.Visible = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(765, 759);
-            this.Controls.Add(this.label50);
-            this.Controls.Add(this.btnGetCookie);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.mainWager);
             this.Controls.Add(this.mainProfit);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.mainBalance);
             this.Controls.Add(this.label30);
             this.Controls.Add(this.label2);
@@ -2480,20 +2456,15 @@ namespace Hilo_v2
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label32);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.lblWsStatus);
-            this.Controls.Add(this.lblWsIndicator);
-            this.Controls.Add(this.lblCookieStatus);
-            this.Controls.Add(this.cmbFetchMode);
-            //this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
-            //this.Text = "HiLo";
+            this.Size = new System.Drawing.Size(1678, 759);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.ManualPage.ResumeLayout(false);
             this.ManualPage.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.tabControl2.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -2545,13 +2516,9 @@ namespace Hilo_v2
             this.BetsPage.ResumeLayout(false);
             this.BetsPage.PerformLayout();
             this.LogPage.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
-
-            
 
         }
 
@@ -2634,7 +2601,6 @@ namespace Hilo_v2
         private System.Windows.Forms.NumericUpDown PauseMulti;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox SeedBox3;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label mainWager;
@@ -2713,7 +2679,6 @@ namespace Hilo_v2
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.LinkLabel ResetCounterLabel;
         private System.Windows.Forms.LinkLabel ResetCountersLabel2;
-        private System.Windows.Forms.CheckBox cbAutoCard;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.TextBox textBox5;
     }

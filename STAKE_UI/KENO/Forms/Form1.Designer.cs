@@ -28,9 +28,6 @@ namespace Keno
         /// </summary>
         private void InitializeComponent()
         {
-
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.clearTable = new System.Windows.Forms.Button();
@@ -48,6 +45,7 @@ namespace Keno
             this.StatusLogIn = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.lblCookieStatus = new System.Windows.Forms.Label();
             this.btnGetCookie = new System.Windows.Forms.Button();
             this.lblWsIndicator = new System.Windows.Forms.Label();
             this.lblWsStatus = new System.Windows.Forms.Label();
@@ -109,7 +107,6 @@ namespace Keno
             this.autoPickBtn = new System.Windows.Forms.Button();
             this.LiveBalLabel = new System.Windows.Forms.TextBox();
             this.riskLabel = new System.Windows.Forms.Label();
-            this.lblCookieStatus = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -127,7 +124,7 @@ namespace Keno
             // button1
             // 
             this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(972, 332);
+            this.button1.Location = new System.Drawing.Point(1124, 332);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 27);
@@ -149,7 +146,7 @@ namespace Keno
             // 
             // clearTable
             // 
-            this.clearTable.Location = new System.Drawing.Point(869, 332);
+            this.clearTable.Location = new System.Drawing.Point(1021, 332);
             this.clearTable.Margin = new System.Windows.Forms.Padding(4);
             this.clearTable.Name = "clearTable";
             this.clearTable.Size = new System.Drawing.Size(103, 27);
@@ -165,7 +162,7 @@ namespace Keno
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(1067, 156);
+            this.groupBox1.Size = new System.Drawing.Size(1226, 220);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             // 
@@ -190,7 +187,7 @@ namespace Keno
             this.listView1.Location = new System.Drawing.Point(4, 19);
             this.listView1.Margin = new System.Windows.Forms.Padding(4);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1059, 133);
+            this.listView1.Size = new System.Drawing.Size(1218, 197);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -239,11 +236,11 @@ namespace Keno
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.StatusLogIn});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 512);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 580);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(16, 0, 2, 0);
             this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.statusStrip1.Size = new System.Drawing.Size(1067, 26);
+            this.statusStrip1.Size = new System.Drawing.Size(1230, 26);
             this.statusStrip1.TabIndex = 7;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -294,6 +291,16 @@ namespace Keno
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Main";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // lblCookieStatus
+            // 
+            this.lblCookieStatus.AutoSize = true;
+            this.lblCookieStatus.ForeColor = System.Drawing.Color.Gray;
+            this.lblCookieStatus.Location = new System.Drawing.Point(462, 8);
+            this.lblCookieStatus.Name = "lblCookieStatus";
+            this.lblCookieStatus.Size = new System.Drawing.Size(77, 16);
+            this.lblCookieStatus.TabIndex = 54;
+            this.lblCookieStatus.Text = "◯ Not found";
             // 
             // btnGetCookie
             // 
@@ -995,14 +1002,14 @@ namespace Keno
             this.listView2.Margin = new System.Windows.Forms.Padding(4);
             this.listView2.Name = "listView2";
             this.listView2.Scrollable = false;
-            this.listView2.Size = new System.Drawing.Size(445, 50);
+            this.listView2.Size = new System.Drawing.Size(597, 50);
             this.listView2.TabIndex = 0;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
             // 
             // autoPickBtn
             // 
-            this.autoPickBtn.Location = new System.Drawing.Point(784, 332);
+            this.autoPickBtn.Location = new System.Drawing.Point(936, 332);
             this.autoPickBtn.Margin = new System.Windows.Forms.Padding(4);
             this.autoPickBtn.Name = "autoPickBtn";
             this.autoPickBtn.Size = new System.Drawing.Size(85, 27);
@@ -1030,28 +1037,17 @@ namespace Keno
             // 
             this.riskLabel.AutoSize = true;
             this.riskLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.riskLabel.Location = new System.Drawing.Point(962, 10);
+            this.riskLabel.Location = new System.Drawing.Point(1083, 10);
             this.riskLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.riskLabel.Name = "riskLabel";
             this.riskLabel.Size = new System.Drawing.Size(41, 20);
             this.riskLabel.TabIndex = 10;
             this.riskLabel.Text = "Risk:";
             // 
-            // lblCookieStatus
-            // 
-            this.lblCookieStatus.AutoSize = true;
-            this.lblCookieStatus.ForeColor = System.Drawing.Color.Gray;
-            this.lblCookieStatus.Location = new System.Drawing.Point(462, 8);
-            this.lblCookieStatus.Name = "lblCookieStatus";
-            this.lblCookieStatus.Size = new System.Drawing.Size(77, 16);
-            this.lblCookieStatus.TabIndex = 54;
-            this.lblCookieStatus.Text = "◯ Not found";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 538);
             this.Controls.Add(this.riskLabel);
             this.Controls.Add(this.LiveBalLabel);
             this.Controls.Add(this.autoPickBtn);
@@ -1062,10 +1058,9 @@ namespace Keno
             this.Controls.Add(this.button2);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.groupBox1);
-            //this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
-            //this.Text = "Keno";
+            this.Size = new System.Drawing.Size(1230, 606);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
